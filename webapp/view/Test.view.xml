@@ -1,0 +1,49 @@
+<mvc:View controllerName="com.smod.ux.controldev.controller.Test"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:smod="com.smod.ux.controldev.ux"
+    	xmlns:mc="sap.suite.ui.microchart"
+        xmlns:l="sap.ui.layout">
+    <Shell id="shell">
+        <App id="app">
+            <pages>
+                <Page id="page" title="{i18n>title}">
+                    <content>
+                    	<!-- <smod:CircleRating /> -->
+                      <!-- <  <smod:FlipButton press=".onButtonPressed">
+                            <smod:FlipButtonFace>
+                                <VBox alignItems="Center" justifyContent="Center" width="100%">
+                                    <Label text="First"/>
+                                    <Text text="89"/>
+                                </VBox>
+                            </smod:FlipButtonFace>
+
+                            <smod:FlipButtonFace>
+                                <VBox alignItems="Center" justifyContent="Center" width="100%">
+                                    <Label text="Second"/>
+                                    <Text text="78"/>
+                                </VBox>
+                            </smod:FlipButtonFace>
+
+                            <smod:FlipButtonFace>
+                                <VBox alignItems="Center" justifyContent="Center" width="100%">
+                                    <Label text="Third"/>
+                                    <Text text="88"/>
+                                </VBox>
+                            </smod:FlipButtonFace>
+
+                            <smod:FlipButtonFace>
+                                <VBox alignItems="Center" justifyContent="Center" width="100%">
+                                    <Label text="Fourth"/>
+                                    <Text text="3200,00₺"/>
+                                </VBox>
+                            </smod:FlipButtonFace>
+                        </smod:FlipButton> -->
+                        <smod:Signer />
+
+                    </content>
+                </Page>
+            </pages>
+        </App>
+    </Shell>
+</mvc:View>
