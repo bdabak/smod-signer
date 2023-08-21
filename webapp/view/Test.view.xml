@@ -10,7 +10,7 @@
                 <Page id="page" title="{i18n>title}">
                     <content>
                     	
-                        <smod:Signer />
+                        <!-- <smod:Signer /> -->
                         <smod:CircleRating />
 
                     </content>
