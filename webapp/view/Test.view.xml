@@ -9,37 +9,9 @@
             <pages>
                 <Page id="page" title="{i18n>title}">
                     <content>
-                    	<!-- <smod:CircleRating /> -->
-                      <!-- <  <smod:FlipButton press=".onButtonPressed">
-                            <smod:FlipButtonFace>
-                                <VBox alignItems="Center" justifyContent="Center" width="100%">
-                                    <Label text="First"/>
-                                    <Text text="89"/>
-                                </VBox>
-                            </smod:FlipButtonFace>
-
-                            <smod:FlipButtonFace>
-                                <VBox alignItems="Center" justifyContent="Center" width="100%">
-                                    <Label text="Second"/>
-                                    <Text text="78"/>
-                                </VBox>
-                            </smod:FlipButtonFace>
-
-                            <smod:FlipButtonFace>
-                                <VBox alignItems="Center" justifyContent="Center" width="100%">
-                                    <Label text="Third"/>
-                                    <Text text="88"/>
-                                </VBox>
-                            </smod:FlipButtonFace>
-
-                            <smod:FlipButtonFace>
-                                <VBox alignItems="Center" justifyContent="Center" width="100%">
-                                    <Label text="Fourth"/>
-                                    <Text text="3200,00₺"/>
-                                </VBox>
-                            </smod:FlipButtonFace>
-                        </smod:FlipButton> -->
+                    	
                         <smod:Signer />
+                        <smod:CircleRating />
 
                     </content>
                 </Page>

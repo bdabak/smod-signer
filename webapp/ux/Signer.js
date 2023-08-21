@@ -9,7 +9,10 @@ sap.ui.define([
         metadata: {
             properties: {},
             aggregations: {
-              
+            _toolbar: {
+                type: "sap.m.Toolbar",
+                multiple: false
+            }
             },
             events: {
               signCompleted: {},
@@ -37,6 +40,9 @@ sap.ui.define([
         _resetSignature: function(){
             this.$().find(".smod-signer").jSignature("reset");
         },
+        _undoStroke: function(){
+            this.$().find(".smod-signer").jSignature("undo");
+        },
         _doSign: function(){
             var signatureImage = this.$().find(".smod-signer").jSignature("getData");
             console.log(signatureImage);
@@ -51,20 +57,23 @@ sap.ui.define([
                 type: "Reject"
             });
 
+          
+
             var oSign = new sap.m.Button({
                 icon:"sap-icon://signature",
                 text:"İmzala",
                 press: oControl._doSign.bind(oControl),
-                type: "Emphasized"
+                type: "Accept"
             });
 
-            var oHB = new sap.m.HBox({
-               justifyContent: "SpaceBetween",
-               items: [
+            var oHB = new sap.m.Toolbar({
+               content: [
                 oReset,
+                new sap.m.ToolbarSpacer(),
                 oSign
-               ]
-            }).addStyleClass("sapUiLargeMarginBeginEnd")
+               ],
+               design: "Transparent"
+            }).addStyleClass("sapUiResponsivePadding")
 
             oRM
                 .openStart("div", oControl)
