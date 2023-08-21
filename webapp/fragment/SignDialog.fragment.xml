@@ -1,0 +1,11 @@
+<c:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:c="sap.ui.core"
+xmlns:smod="com.smod.ux.controldev.ux"
+>
+    <Dialog contentWidth="500px" afterClose=".onSignDialogClosed" title="İmzala">
+        <content>
+            <smod:Signer signed=".onSignedDialog" showUndo="true" format="default" />
+        </content>
+    </Dialog>
+</c:FragmentDefinition>

@@ -9,9 +9,8 @@
             <pages>
                 <Page id="page" title="{i18n>title}">
                     <content>
-                    	
-                        <!-- <smod:Signer /> -->
-                        <smod:CircleRating />
+                    	<smod:Signer signed=".onSigned"/>
+                        <Button text="Sign Using Dialog" press=".onSign" class="sapUiLargeMarginTop"/>
 
                     </content>
                 </Page>

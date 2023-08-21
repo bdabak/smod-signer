@@ -7,74 +7,86 @@ sap.ui.define([
 
     return Control.extend("com.smod.ux.controldev.ux.Signer", {
         metadata: {
-            properties: {},
+            properties: {
+                format: {
+                    type: "string",
+                    bindable: "true",
+                    defaultValue: "default"
+                },
+                showUndo:{
+                    type: "boolean",
+                    bindable: "true",
+                    defaultValue: false
+                }
+            },
             aggregations: {
-            _toolbar: {
-                type: "sap.m.Toolbar",
-                multiple: false
-            }
+                _toolbar: {
+                    type: "sap.m.Toolbar",
+                    multiple: false
+                }
             },
             events: {
-              signCompleted: {},
+                signed: {
+                    parameters: {
+                        signature: { type: "string" }
+                    }
+                },
             },
-            
-          },
+
+        },
         init: function () {
             var sLibraryPath = jQuery.sap.getModulePath("com.smod.ux.controldev"); //get the server location of the ui library
             jQuery.sap.includeStyleSheet(sLibraryPath + "/ux/Signer.css");
+
+            var oReset = new sap.m.Button({
+                icon: "sap-icon://refresh",
+                text: "Sıfırla",
+                press: this._resetSignature.bind(this),
+                type: "Reject"
+            });
+
+            var oSign = new sap.m.Button({
+                icon: "sap-icon://signature",
+                text: "İmzala",
+                press: this._doSign.bind(this),
+                type: "Accept"
+            });
+
+            var oTB = new sap.m.Toolbar({
+                content: [
+                    oReset,
+                    new sap.m.ToolbarSpacer(),
+                    oSign
+                ],
+                design: "Transparent"
+            }).addStyleClass("sapUiResponsivePadding");
+
+            this.setAggregation("_toolbar", oTB);
         },
         /**
          * @override
          */
-        onAfterRendering: function() {
+        onAfterRendering: function () {
             var that = this;
             Control.prototype.onAfterRendering.apply(this, arguments);
-            
-            $(document).ready(function() {
-	
+
+            $(document).ready(function () {
                 // This is the part where jSignature is initialized.
-                var $sigdiv = that.$().find(".smod-signer").jSignature({'UndoButton':true});
+                var $sigdiv = that.$().find(".smod-signer").jSignature({ 'UndoButton': that.getShowUndo() });
             });
-        
         },
-        _resetSignature: function(){
+        _resetSignature: function () {
             this.$().find(".smod-signer").jSignature("reset");
         },
-        _undoStroke: function(){
-            this.$().find(".smod-signer").jSignature("undo");
-        },
-        _doSign: function(){
-            var signatureImage = this.$().find(".smod-signer").jSignature("getData");
-            console.log(signatureImage);
+        _doSign: function () {
+            var signatureImage = this.$().find(".smod-signer").jSignature("getData", this.getFormat());
+           
+            this.fireSigned({
+                signature:signatureImage
+            });
 
         },
         renderer: function (oRM, oControl) {
-
-            var oReset = new sap.m.Button({
-                icon:"sap-icon://refresh",
-                text:"Sıfırla",
-                press: oControl._resetSignature.bind(oControl),
-                type: "Reject"
-            });
-
-          
-
-            var oSign = new sap.m.Button({
-                icon:"sap-icon://signature",
-                text:"İmzala",
-                press: oControl._doSign.bind(oControl),
-                type: "Accept"
-            });
-
-            var oHB = new sap.m.Toolbar({
-               content: [
-                oReset,
-                new sap.m.ToolbarSpacer(),
-                oSign
-               ],
-               design: "Transparent"
-            }).addStyleClass("sapUiResponsivePadding")
-
             oRM
                 .openStart("div", oControl)
                 .class("smod-signer-parent")
@@ -82,7 +94,7 @@ sap.ui.define([
                 .openStart("div")
                 .class("smod-signer")
                 .openEnd().close("div");
-            oRM.renderControl(oHB);
+            oRM.renderControl(oControl.getAggregation("_toolbar"));
             oRM.close("div");
         }
     });
