@@ -5,6 +5,7 @@
 */
 sap.ui.define([], ()=>{
     const variant = {
+        Default: "",
         Elevated: "elevated",
         Filled: "filled",
         FilledTonal: "filled-tonal",

@@ -78,3 +78,15 @@ md-icon {
 .smod-icon-circle-360:before {
   content: "\e904";
 }
+
+.md-radio-group-horizontal{
+  display: inline-flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.md-radio-group-item{
+  display: flex;
+  align-items: center;
+  gap:0.2rem;
+}

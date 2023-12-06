@@ -1,4 +1,4 @@
-sap.ui.define(["sap/ui/core/Control","com/smod/ux/controldev/ux/enum/ButtonVariant"], function (Control,
+sap.ui.define(["sap/ui/core/Control","./enum/ButtonVariant"], function (Control,
 	ButtonVariant) {
   "use strict";
 

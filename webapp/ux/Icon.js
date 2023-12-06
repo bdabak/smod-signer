@@ -7,7 +7,7 @@ sap.ui.define(["sap/ui/core/Control"], function (Control) {
                 slot: {
                     type: "string",
                     bindable: true,
-                    defaultValue: "icon"
+                    defaultValue: null
                 },
                 icon: {
                     type: "string",

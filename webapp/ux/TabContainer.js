@@ -39,7 +39,7 @@ sap.ui.define([
           .openStart("md-tabs", oControl)
           .openEnd();
   
-        //--Options
+        //--Tabs
         aTabs.forEach((oTab, i) => {
           oTab.setProperty("tabIndex", i, true);
           if (i === oControl.getActiveTabIndex()) {
@@ -47,7 +47,7 @@ sap.ui.define([
           }
           oRM.renderControl(oTab);
         });
-        //--Options
+        //--Tabs
   
         oRM.close("md-tabs");
       },

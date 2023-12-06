@@ -1,19 +1,19 @@
 sap.ui.define([
   "sap/ui/core/Control",
-  "./enum/TabType"
+  "./enum/TabVariant"
 ], function (
   Control,
-  TabType
+  TabVariant
 ) {
   "use strict";
 
   return Control.extend("com.smod.ux.controldev.ux.Tab", {
     metadata: {
       properties: {
-        tabType: {
-          type: "com.smod.ux.controldev.ux.enum.TabType",
+        variant: {
+          type: "com.smod.ux.controldev.ux.enum.TabVariant",
           bindable: true,
-          defaultValue: TabType.Primary
+          defaultValue: TabVariant.Primary
         },
         title: {
           type: "string",
@@ -69,7 +69,7 @@ sap.ui.define([
       const sTitle = oControl.getTitle();
 
       //--Set variant
-      const e = `md-${oControl.getTabType()}-tab`;
+      const e = `md-${oControl.getVariant()}-tab`;
 
       oRM
         .openStart(e, oControl);

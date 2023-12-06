@@ -1,11 +1,11 @@
 sap.ui.define([
   "sap/ui/core/Control",
   "./enum/FieldVariant",
-  "./enum/TextTypes"
+  "./enum/TextVariant"
 ], function (
   Control,
   FieldVariant,
-  TextTypes
+  TextVariant
 ) {
   "use strict";
 
@@ -28,9 +28,9 @@ sap.ui.define([
           defaultValue: ""
         },
         type: {
-          type: "com.smod.ux.controldev.ux.enum.TextTypes",
+          type: "com.smod.ux.controldev.ux.enum.TextVariant",
           bindable: true,
-          defaultValue: TextTypes.Text
+          defaultValue: TextVariant.Text
         },
         rows: {
           type: "int",

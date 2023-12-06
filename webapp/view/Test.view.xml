@@ -13,7 +13,11 @@
                         <Button text="Sign Using Dialog" press=".onSign" class="sapUiLargeMarginTop"/> -->
                         <smod:CheckBox label="Edit" checked="{/formData/checked}"/>
                         <smod:Button text="Filled" class="sapUiTinyMargin" enabled="{/formData/checked}" />
-                        <smod:Button variant="Elevated" text="Elevated" class="sapUiTinyMargin" />
+                        <smod:Button variant="Elevated" text="Elevated" class="sapUiTinyMargin">
+                            <smod:trailingIcon>
+                                <smod:Icon icon="send" />
+                            </smod:trailingIcon>
+                        </smod:Button>
 
                         <smod:Button variant="Text" text="Text" class="sapUiTinyMargin" />
 
@@ -33,25 +37,44 @@
 
                         <smod:TabContainer changed=".onTabChanged">
                             <smod:tabs>
-                                <smod:Tab title="Tab 1" inlineIcon="true" tabType="Primary">
+                                <smod:Tab title="Tab 1" inlineIcon="true" variant="Primary">
                                     <smod:icon>
                                         <smod:Icon icon="send"/>
                                     </smod:icon>
                                 </smod:Tab>
 
-                                <smod:Tab title="Tab 2" inlineIcon="true" tabType="Primary">
+                                <smod:Tab title="Tab 2" inlineIcon="true" variant="Primary">
                                     <smod:icon>
                                         <smod:Icon icon="settings"/>
                                     </smod:icon>
                                 </smod:Tab>
 
-                                <smod:Tab title="Tab 3" inlineIcon="true" tabType="Primary">
+                                <smod:Tab title="Tab 3" inlineIcon="true" variant="Primary">
                                     <smod:icon>
                                         <smod:Icon icon="home"/>
                                     </smod:icon>
                                 </smod:Tab>
                             </smod:tabs>
                         </smod:TabContainer>
+
+                        <smod:IconButton variant="FilledTonal" toggle="true">
+                            <smod:icons>
+                                <smod:Icon icon="close" />
+                                <smod:Icon icon="done" slot="selected"/>
+                            </smod:icons>
+                        </smod:IconButton>
+
+                        <smod:RadioGroup name="animal">
+                            <smod:items>
+
+
+                                <smod:Radio label="Cat" checked="true" value="cat" />
+                                <smod:Radio label="Dog" checked="false" value="dog" />
+                                <smod:Radio label="Duck" checked="false" value="duck" />
+
+                                <smod:Radio label="Donkey" checked="false" value="donkey" />
+                            </smod:items>
+                        </smod:RadioGroup>
                     </content>
                 </Page>
             </pages>
