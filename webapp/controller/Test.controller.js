@@ -1,15 +1,30 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "sap/ui/core/Fragment",
+    "sap/ui/model/json/JSONModel"
 ],
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
      */
-    function (Controller,Fragment) {
+    function (Controller,Fragment, JSONModel) {
         "use strict";
 
         return Controller.extend("com.smod.ux.controldev.controller.Test", {
             onInit: function () {
+                var oModel = new JSONModel({
+                    selectOptions: [
+                        {key: "-1", value: null},
+                        {key: "1", value: "Orange"},
+                        {key: "2", value: "Apple"},
+                    ],
+                    formData:{
+                        checked: false,
+                        selectedKey: null,
+                        value: ""
+                    }
+                });
+                
+                this.getView().setModel(oModel);
 
             },
             onButtonPressed: function(){
@@ -41,6 +56,12 @@ sap.ui.define([
             onSignDialogClosed:function(){
                 this._oSignDialog?.destroy();
                 this._oSignDialog = null;
+            },
+            onSelectChanged: function(e){
+                console.log(e.getParameters());
+            },
+            onTabChanged: function(e){
+                console.log(e.getParameters());
             }
         });
     });
