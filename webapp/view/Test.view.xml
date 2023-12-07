@@ -2,45 +2,79 @@
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     xmlns="sap.m"
     xmlns:smod="com.smod.ux.controldev.ux"
-    	xmlns:mc="sap.suite.ui.microchart"
-        xmlns:l="sap.ui.layout">
+    xmlns:mc="sap.suite.ui.microchart"
+    xmlns:l="sap.ui.layout">
     <Shell id="shell">
         <App id="app">
             <pages>
                 <Page id="page" title="{i18n>title}">
                     <content>
-                    	<!-- <smod:CircleRating /> -->
-                      <!-- <  <smod:FlipButton press=".onButtonPressed">
-                            <smod:FlipButtonFace>
-                                <VBox alignItems="Center" justifyContent="Center" width="100%">
-                                    <Label text="First"/>
-                                    <Text text="89"/>
-                                </VBox>
-                            </smod:FlipButtonFace>
+                        <!-- <smod:Signer signed=".onSigned"/>
+                        <Button text="Sign Using Dialog" press=".onSign" class="sapUiLargeMarginTop"/> -->
+                        <smod:CheckBox label="Edit" checked="{/formData/checked}"/>
+                        <smod:Button text="Filled" class="sapUiTinyMargin" enabled="{/formData/checked}" />
+                        <smod:Button variant="Elevated" text="Elevated" class="sapUiTinyMargin">
+                            <smod:trailingIcon>
+                                <smod:Icon icon="send" />
+                            </smod:trailingIcon>
+                        </smod:Button>
 
-                            <smod:FlipButtonFace>
-                                <VBox alignItems="Center" justifyContent="Center" width="100%">
-                                    <Label text="Second"/>
-                                    <Text text="78"/>
-                                </VBox>
-                            </smod:FlipButtonFace>
+                        <smod:Button variant="Text" text="Text" class="sapUiTinyMargin" />
 
-                            <smod:FlipButtonFace>
-                                <VBox alignItems="Center" justifyContent="Center" width="100%">
-                                    <Label text="Third"/>
-                                    <Text text="88"/>
-                                </VBox>
-                            </smod:FlipButtonFace>
+                        <smod:Button variant="FilledTonal" text="Tonal" class="sapUiTinyMargin">
+                            <smod:leadingIcon>
+                                <smod:Icon icon="send" />
+                            </smod:leadingIcon>
+                        </smod:Button>
+                        <smod:Select label="Select" class="sapUiTinyMargin" changed=".onSelectChanged" options="{/selectOptions}" selectedKey="{/formData/selectedKey}" enabled="{/formData/checked}">
+                            <smod:SelectOption key="{key}" value="{value}" noValue="{= ${value} === null }" />
+                            <!-- <smod:SelectOption key="1" value="Apple" noValue="false" selected="false" />
+                           <smod:SelectOption key="2" value="Tomato" noValue="false" selected="false" /> -->
+                        </smod:Select>
+                        <smod:TextField label="Text Area" type="TextArea" class="sapUiTinyMargin" editable="{/formData/checked}" value="{/formData/value}" />
 
-                            <smod:FlipButtonFace>
-                                <VBox alignItems="Center" justifyContent="Center" width="100%">
-                                    <Label text="Fourth"/>
-                                    <Text text="3200,00₺"/>
-                                </VBox>
-                            </smod:FlipButtonFace>
-                        </smod:FlipButton> -->
-                        <smod:Signer />
+                        <smod:TextField label="Text" class="sapUiTinyMargin" editable="{/formData/checked}" value="{/formData/value}"/>
 
+                        <smod:TabContainer changed=".onTabChanged">
+                            <smod:tabs>
+                                <smod:Tab title="Tab 1" inlineIcon="true" variant="Primary">
+                                    <smod:icon>
+                                        <smod:Icon icon="send"/>
+                                    </smod:icon>
+                                </smod:Tab>
+
+                                <smod:Tab title="Tab 2" inlineIcon="true" variant="Primary">
+                                    <smod:icon>
+                                        <smod:Icon icon="settings"/>
+                                    </smod:icon>
+                                </smod:Tab>
+
+                                <smod:Tab title="Tab 3" inlineIcon="true" variant="Primary">
+                                    <smod:icon>
+                                        <smod:Icon icon="home"/>
+                                    </smod:icon>
+                                </smod:Tab>
+                            </smod:tabs>
+                        </smod:TabContainer>
+
+                        <smod:IconButton variant="FilledTonal" toggle="true">
+                            <smod:icons>
+                                <smod:Icon icon="close" />
+                                <smod:Icon icon="done" slot="selected"/>
+                            </smod:icons>
+                        </smod:IconButton>
+
+                        <smod:RadioGroup name="animal">
+                            <smod:items>
+
+
+                                <smod:Radio label="Cat" checked="true" value="cat" />
+                                <smod:Radio label="Dog" checked="false" value="dog" />
+                                <smod:Radio label="Duck" checked="false" value="duck" />
+
+                                <smod:Radio label="Donkey" checked="false" value="donkey" />
+                            </smod:items>
+                        </smod:RadioGroup>
                     </content>
                 </Page>
             </pages>

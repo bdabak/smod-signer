@@ -55,28 +55,24 @@
         "settings": {
           "bundleName": "com.smod.ux.controldev.i18n.i18n"
         }
-      },
-      "": {
-        "dataSource": "mainService",
-        "preload": true,
-        "settings": {
-          "synchronizationMode": "None",
-          "operationMode": "Server",
-          "autoExpandSelect": true,
-          "earlyRequests": true,
-          "groupId": "$direct"
-        }
       }
+      
     },
     "resources": {
       "css": [
         {
           "uri": "css/style.css"
+        },
+        {
+          "uri": "css/theme.css"
         }
       ],
       "js": [
         {
           "uri":"utils/jSignature.min.js"
+        },
+        {
+          "uri":"utils/material.js"
         }
       ]
     },

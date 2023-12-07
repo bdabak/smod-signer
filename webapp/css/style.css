@@ -1,47 +1,92 @@
-  @font-face {
-    font-family: 'smodfont';
-    src:  url('assets/fonts/smodfont.eot?x432hj');
-    src:  url('assets/fonts/smodfont.eot?x432hj#iefix') format('embedded-opentype'),
-      url('assets/fonts/smodfont.ttf?x432hj') format('truetype'),
-      url('assets/fonts/smodfont.woff?x432hj') format('woff'),
-      url('assets/fonts/smodfont.svg?x432hj#smodfont') format('svg');
-    font-weight: normal;
-    font-style: normal;
-    font-display: block;
-  }
-  
-  [class^="smod-icon-"], [class*=" smod-icon-"] {
-    /* use !important to prevent issues with browser extensions that change fonts */
-    font-family: 'smodfont' !important;
-    speak: never;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-    color: rgb(46, 46, 46) !important;
-  
-    /* Better Font Rendering =========== */
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-  
-  .smod-icon-circle-0:before {
-    content: "\e900";
-  }
-  .smod-icon-circle-90:before {
-    content: "\e901";
-  }
-  .smod-icon-circle-180:before {
-    content: "\e902";
-  }
-  .smod-icon-circle-270:before {
-    content: "\e903";
-  }
-  .smod-icon-circle-360:before {
-    content: "\e904";
-  }
-  
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300ita‌​lic,400italic,500,500italic,700,700italic,900italic,900);
 
-  
-  
+
+@font-face {
+  font-family: 'Material Symbols Rounded';
+  font-style: normal;
+  font-weight: 400;
+  src:  url("assets/fonts/material-rounded.ttf") format("truetype"),
+    url("assets/fonts/material-rounded.woff2") format("woff2");
+
+}
+
+.material-symbols-rounded {
+  font-family: 'Material Symbols Rounded';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+md-icon {
+  --md-icon-size: 48px;
+  --md-icon-font: 'Material Symbols Rounded';
+  font-variation-settings: 'FILL' 1;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+@font-face {
+  font-family: "smodfont";
+  src: url("assets/fonts/smodfont.eot?x432hj");
+  src: url("assets/fonts/smodfont.eot?x432hj#iefix") format("embedded-opentype"),
+    url("assets/fonts/smodfont.ttf?x432hj") format("truetype"),
+    url("assets/fonts/smodfont.woff?x432hj") format("woff"),
+    url("assets/fonts/smodfont.svg?x432hj#smodfont") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="smod-icon-"],
+[class*=" smod-icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "smodfont" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  color: rgb(46, 46, 46) !important;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.smod-icon-circle-0:before {
+  content: "\e900";
+}
+.smod-icon-circle-90:before {
+  content: "\e901";
+}
+.smod-icon-circle-180:before {
+  content: "\e902";
+}
+.smod-icon-circle-270:before {
+  content: "\e903";
+}
+.smod-icon-circle-360:before {
+  content: "\e904";
+}
+
+.md-radio-group-horizontal{
+  display: inline-flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.md-radio-group-item{
+  display: flex;
+  align-items: center;
+  gap:0.2rem;
+}
